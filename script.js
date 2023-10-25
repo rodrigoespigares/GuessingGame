@@ -44,6 +44,11 @@ function aleatorio(){
     let header = document.querySelector("header");
     let newColor = document.getElementById("new");
     newColor.addEventListener("click", () => {
+        let hardBtn = document.getElementById("hard");
+        let easyBtn = document.getElementById("easy");
+        if(easyBtn.style.backgroundColor == "transparent"){
+            hardBtn.style.backgroundColor = "darkseagreen";
+        }
         vidas = 3;
         intentos.innerHTML=``;
         header.style.backgroundColor = "darkseagreen";
@@ -55,7 +60,7 @@ function aleatorio(){
             if(i==ganador){
                 container.style.backgroundColor = winnerColor;
             }else{
-            container.style.backgroundColor = allColors();
+                container.style.backgroundColor = allColors();
             }
             i++;
         }
@@ -69,7 +74,7 @@ function jugar(){
     let header = document.querySelector("header");
     let intentos = document.getElementById("intentos");
     let colores = document.getElementById("contenedorColores");
-    
+    let containers = document.querySelectorAll(".colores");
         colores.addEventListener("click",(e) => {
             let comprobar = intentos.innerHTML;
             if(vidas >=0 && comprobar!="WIN!" && comprobar!="CLICK NEW GAME TO PLAY"){
@@ -78,8 +83,13 @@ function jugar(){
                 if(color == winner){
                     intentos.innerHTML="WIN!"
                     header.style.backgroundColor = winner;
+                    for (const container of containers) {
+                        container.style.transition = "1s";
+                        container.style.backgroundColor=winner;
+                    }
                 }else{
                     intentos.innerHTML=`TRY NOW ${vidas}/3`
+                    e.target.style.transition = "1s"
                     e.target.style.backgroundColor = "transparent"
                     vidas--;
                 }
