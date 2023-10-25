@@ -3,7 +3,7 @@ In this game you can select between different games, trying to match the color d
 
 Will you be able to find it?
 
-##Learned content
+## Learned content
 
 This project has been created with the purpose of practicing events in JavaScript
 
