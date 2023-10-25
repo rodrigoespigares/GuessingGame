@@ -4,7 +4,7 @@ body{
     background-color: black;
 }
 header{
-    background-color: darkseagreen;
+    background-color: SlateBlue;
     display: gird;
     flex-direction: column;
     text-align: center;
@@ -34,6 +34,7 @@ main{
 .white button{
     background-color: transparent;
     border: none;
+    height: 20px;
 }
 .white p{
     font-weight: 800;

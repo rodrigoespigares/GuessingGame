@@ -19,8 +19,10 @@ function dificult(){
     let hardBtn = document.getElementById("hard");
     
     easyBtn.addEventListener("click",() => {
-        easyBtn.style.backgroundColor = "darkseagreen"
+        easyBtn.style.backgroundColor = "SlateBlue"
+        easyBtn.style.color = "white"
         hardBtn.style.backgroundColor = "transparent"
+        hardBtn.style.color = "black"
         vidas = -1;
         let i=0;
         for (const container of containers) {
@@ -32,7 +34,9 @@ function dificult(){
     })
     hardBtn.addEventListener("click",() => {
         easyBtn.style.backgroundColor = "transparent"
-        hardBtn.style.backgroundColor = "darkseagreen"
+        easyBtn.style.color = "black"
+        hardBtn.style.backgroundColor = "SlateBlue"
+        hardBtn.style.color = "white"
         vidas = -1;
         for (const container of containers) {
             container.className = "colores";
@@ -47,11 +51,13 @@ function aleatorio(){
         let hardBtn = document.getElementById("hard");
         let easyBtn = document.getElementById("easy");
         if(easyBtn.style.backgroundColor == "transparent"){
-            hardBtn.style.backgroundColor = "darkseagreen";
+            hardBtn.style.backgroundColor = "SlateBlue";
+            hardBtn.style.color = "white";
+
         }
         vidas = 3;
         intentos.innerHTML=``;
-        header.style.backgroundColor = "darkseagreen";
+        header.style.backgroundColor = "SlateBlue";
         winnerColor = win();
         let containers = document.querySelectorAll(".colores");
         let i=0;

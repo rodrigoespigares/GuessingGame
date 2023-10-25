@@ -2,7 +2,8 @@ window.onload = () => {
     let easyBtn = document.getElementById("easy");
     let hardBtn = document.getElementById("hard");
     easyBtn.style.backgroundColor = "transparent"
-    hardBtn.style.backgroundColor = "darkseagreen"
+    hardBtn.style.backgroundColor = "SlateBlue"
+    hardBtn.style.color = "white";
     win();
     jugar();
     let footer = document.querySelector("footer");

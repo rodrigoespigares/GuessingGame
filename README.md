@@ -9,6 +9,9 @@ This project has been created with the purpose of practicing events in JavaScrip
 
 ## Version data
 
+### V.1.2
+Change base color
+
 ### V.1.1
 Lives and visual transitions are added.
 
