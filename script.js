@@ -1,3 +1,5 @@
+let vidas = 3;
+
 function allColors(){
     r = Math.floor(Math.random()*255);
     g = Math.floor(Math.random()*255);
@@ -17,6 +19,9 @@ function dificult(){
     let hardBtn = document.getElementById("hard");
     
     easyBtn.addEventListener("click",() => {
+        easyBtn.style.backgroundColor = "darkseagreen"
+        hardBtn.style.backgroundColor = "transparent"
+        vidas = -1;
         let i=0;
         for (const container of containers) {
             if(i>=3){
@@ -26,17 +31,23 @@ function dificult(){
         }
     })
     hardBtn.addEventListener("click",() => {
+        easyBtn.style.backgroundColor = "transparent"
+        hardBtn.style.backgroundColor = "darkseagreen"
+        vidas = -1;
         for (const container of containers) {
             container.className = "colores";
         }
     })
 }
 let clic = false;
-function aleatorio(winnerColor){
-    
+function aleatorio(){
+    let header = document.querySelector("header");
     let newColor = document.getElementById("new");
     newColor.addEventListener("click", () => {
-        
+        vidas = 3;
+        intentos.innerHTML=``;
+        header.style.backgroundColor = "darkseagreen";
+        winnerColor = win();
         let containers = document.querySelectorAll(".colores");
         let i=0;
         let ganador = Math.floor(Math.random()*containers.length);
@@ -52,21 +63,30 @@ function aleatorio(winnerColor){
 }
 
 function jugar(){
-    winnerColor = win();
     dificult();
-    aleatorio(winnerColor);
+    aleatorio();
+    
     let header = document.querySelector("header");
     let intentos = document.getElementById("intentos");
     let colores = document.getElementById("contenedorColores");
-    let winner = document.getElementById("aleatorio").innerHTML;
-    colores.addEventListener("click",(e) => {
-        let color = e.target.style.backgroundColor;
-        if(color == winner){
-            intentos.innerHTML="WIN!"
-            header.style.backgroundColor = winner;
-        }else{
-            intentos.innerHTML="TRY NOW"
-            e.target.style.backgroundColor = "transparent"
-        }
-    })
+    
+        colores.addEventListener("click",(e) => {
+            let comprobar = intentos.innerHTML;
+            if(vidas >=0 && comprobar!="WIN!" && comprobar!="CLICK NEW GAME TO PLAY"){
+                let winner = document.getElementById("aleatorio").innerHTML;
+                let color = e.target.style.backgroundColor;
+                if(color == winner){
+                    intentos.innerHTML="WIN!"
+                    header.style.backgroundColor = winner;
+                }else{
+                    intentos.innerHTML=`TRY NOW ${vidas}/3`
+                    e.target.style.backgroundColor = "transparent"
+                    vidas--;
+                }
+            }else{
+                intentos.innerHTML=`CLICK NEW GAME TO PLAY`
+            }
+        })
+    
+    
 }

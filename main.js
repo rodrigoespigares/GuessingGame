@@ -1,4 +1,4 @@
 window.onload = () => {
-
+    win();
     jugar();
 }
