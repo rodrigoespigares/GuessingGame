@@ -2,7 +2,7 @@ function allColors(){
     r = Math.floor(Math.random()*255);
     g = Math.floor(Math.random()*255);
     b = Math.floor(Math.random()*255);
-    return `rgb(${r},${g},${b})`;
+    return `rgb(${r}, ${g}, ${b})`;
 }
 
 function win(){
@@ -20,7 +20,6 @@ function dificult(){
         let i=0;
         for (const container of containers) {
             if(i>=3){
-                
                 container.className = "oculto";
             }
             i++;
@@ -33,11 +32,11 @@ function dificult(){
     })
 }
 let clic = false;
-function aleatorio(){
+function aleatorio(winnerColor){
     
     let newColor = document.getElementById("new");
     newColor.addEventListener("click", () => {
-        let winnerColor = win();
+        
         let containers = document.querySelectorAll(".colores");
         let i=0;
         let ganador = Math.floor(Math.random()*containers.length);
@@ -48,6 +47,23 @@ function aleatorio(){
             container.style.backgroundColor = allColors();
             }
             i++;
+        }
+    })
+}
+
+function jugar(){
+    winnerColor = win();
+    dificult();
+    aleatorio(winnerColor);
+    let header = document.querySelector("header");
+    let colores = document.getElementById("contenedorColores");
+    let winner = document.getElementById("aleatorio").innerHTML;
+    colores.addEventListener("click",(e) => {
+        let color = e.target.style.backgroundColor;
+        if(color == winner){
+            header.style.backgroundColor = winner;
+        }else{
+            e.target.style.backgroundColor = "transparent"
         }
     })
 }
