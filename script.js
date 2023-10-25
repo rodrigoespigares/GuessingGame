@@ -56,13 +56,16 @@ function jugar(){
     dificult();
     aleatorio(winnerColor);
     let header = document.querySelector("header");
+    let intentos = document.getElementById("intentos");
     let colores = document.getElementById("contenedorColores");
     let winner = document.getElementById("aleatorio").innerHTML;
     colores.addEventListener("click",(e) => {
         let color = e.target.style.backgroundColor;
         if(color == winner){
+            intentos.innerHTML="WIN!"
             header.style.backgroundColor = winner;
         }else{
+            intentos.innerHTML="TRY NOW"
             e.target.style.backgroundColor = "transparent"
         }
     })
