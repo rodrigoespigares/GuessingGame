@@ -3,6 +3,9 @@ In this game you can select between different games, trying to match the color d
 
 Will you be able to find it?
 
+![imagen](https://github.com/rodrigoespigares/GuessingGame/assets/94736646/4285f778-515b-4304-942f-c130566f3782)
+
+
 ## Learned content
 
 This project has been created with the purpose of practicing events in JavaScript
