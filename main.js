@@ -4,7 +4,7 @@ window.onload = () => {
     easyBtn.style.backgroundColor = "transparent"
     hardBtn.style.backgroundColor = "SlateBlue"
     hardBtn.style.color = "white";
-    win();
+    jugando();
     jugar();
     let footer = document.querySelector("footer");
     year = new Date()

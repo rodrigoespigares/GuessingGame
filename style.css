@@ -29,12 +29,14 @@ main{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 20px;
+    height: 40px;
 }
 .white button{
     background-color: transparent;
     border: none;
-    height: 20px;
+    height: 40px;
+    width: max-content;
+    padding: 0 3em;
 }
 .white p{
     font-weight: 800;

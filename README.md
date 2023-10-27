@@ -13,6 +13,9 @@ This project has been created with the purpose of practicing events in JavaScrip
 
 ## Version data
 
+### V.1.3
+Start game
+
 ### V.1.2
 Change base color
 

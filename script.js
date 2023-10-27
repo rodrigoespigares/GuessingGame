@@ -48,28 +48,8 @@ function aleatorio(){
     let header = document.querySelector("header");
     let newColor = document.getElementById("new");
     newColor.addEventListener("click", () => {
-        let hardBtn = document.getElementById("hard");
-        let easyBtn = document.getElementById("easy");
-        if(easyBtn.style.backgroundColor == "transparent"){
-            hardBtn.style.backgroundColor = "SlateBlue";
-            hardBtn.style.color = "white";
-
-        }
-        vidas = 3;
-        intentos.innerHTML=``;
         header.style.backgroundColor = "SlateBlue";
-        winnerColor = win();
-        let containers = document.querySelectorAll(".colores");
-        let i=0;
-        let ganador = Math.floor(Math.random()*containers.length);
-        for (const container of containers) {
-            if(i==ganador){
-                container.style.backgroundColor = winnerColor;
-            }else{
-                container.style.backgroundColor = allColors();
-            }
-            i++;
-        }
+        jugando(header);
     })
 }
 
@@ -105,4 +85,30 @@ function jugar(){
         })
     
     
+}
+
+function jugando(){
+    
+    let hardBtn = document.getElementById("hard");
+        let easyBtn = document.getElementById("easy");
+        if(easyBtn.style.backgroundColor == "transparent"){
+            hardBtn.style.backgroundColor = "SlateBlue";
+            hardBtn.style.color = "white";
+
+        }
+        vidas = 3;
+        intentos.innerHTML=``;
+        
+        winnerColor = win();
+        let containers = document.querySelectorAll(".colores");
+        let i=0;
+        let ganador = Math.floor(Math.random()*containers.length);
+        for (const container of containers) {
+            if(i==ganador){
+                container.style.backgroundColor = winnerColor;
+            }else{
+                container.style.backgroundColor = allColors();
+            }
+            i++;
+        }
 }
