@@ -3,7 +3,8 @@ In this game you can select between different games, trying to match the color d
 
 Will you be able to find it?
 
-![imagen](https://github.com/rodrigoespigares/GuessingGame/assets/94736646/4285f778-515b-4304-942f-c130566f3782)
+![imagen](https://github.com/rodrigoespigares/GuessingGame/assets/94736646/ddb9b6e3-5eb7-4d30-a775-7b8b4dd51cfc)
+
 
 
 ## Learned content
