@@ -1,3 +1,28 @@
+@media (max-width: 700px) {
+    #dificult{
+        min-width: 50% !important;
+    }
+    #dificult button{
+        padding: 0 1rem !important;
+    }
+    #contenedorColores{
+        width: 80% !important;
+    }
+    .colores{
+        height: 5rem !important;
+        width: 5rem !important;
+    }
+    footer{
+        font-size: small !important;
+        text-align: center !important;
+        padding: 2rem 0 !important;
+    }
+    #intentos{
+        font-size: 10px;
+    }
+}
+  
+
 body{
     margin: 0;
     padding: 0;
@@ -32,6 +57,7 @@ main{
     height: 40px;
 }
 .white button{
+    text-transform: uppercase;
     background-color: transparent;
     border: none;
     height: 40px;
